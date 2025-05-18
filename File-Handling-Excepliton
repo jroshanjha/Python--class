@@ -52,6 +52,16 @@ Reading configurations or CSV/JSON data
 
 Generating reports
 
+# Open a file for both reading and writing
+with open("sample.txt", "r+") as file:
+    content = file.read()               # Reading the existing content
+    print("Old content:", content)
+
+    file.seek(0)                        # Move cursor to the beginning
+    file.write("New content\n")         # Overwrite content from the beginning
+    file.truncate()                     # Trim anything beyond the new content
+
+
 File upload/download systems
 
 💥 Part 2: Exception Handling in Python
